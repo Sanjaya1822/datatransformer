@@ -4,8 +4,7 @@ services:
     env: python
     plan: free
     region: singapore
-    pythonVersion: "3.11"
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt && pip install -e .
     startCommand: alembic upgrade head && uvicorn data_transformer.api.app:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: DATABASE_URL
@@ -26,3 +25,5 @@ services:
         value: "0.50"
       - key: MAX_UPLOAD_SIZE_MB
         value: "10"
+      - key: PYTHONPATH
+        value: "src:."
