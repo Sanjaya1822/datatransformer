@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# Build
+build/
+dist/
+
+# Logs
+*.log
+
+# Environment Variables
+.env
+
+# Coverage
+.coverage
+htmlcov/
+
+# Generated outputs
+merged_output.json
+quality_report.json
+
+# Temporary files
+*.tmp
+
+# SQLite database (local dev only - NOT for production)
+*.db
+*.sqlite3
+
+# Scratch / debug / patch files (dev only)
+scratch_*.py
+debug_*.txt
+patch_*.py
+quick_check.py
+check_db.py
+inspect_db.py
+reconcile_db.py
+verify_e2e.py
+test_jd_match.py

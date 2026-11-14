@@ -1,0 +1,38 @@
+"""Schema package."""
+from .canonical import (
+    AlternativeValue,
+    CandidateRecord,
+    EmailEntry,
+    EducationEntry,
+    EvidenceSpan,
+    ExperienceEntry,
+    FieldValue,
+    LinkEntry,
+    LocationEntry,
+    MergeSummary,
+    PhoneEntry,
+    ProvenanceEntry,
+    RawRecord,
+    SkillEntry,
+    Source,
+    SourceProvenance,
+)
+
+__all__ = [
+    "AlternativeValue",
+    "CandidateRecord",
+    "EmailEntry",
+    "EducationEntry",
+    "EvidenceSpan",
+    "ExperienceEntry",
+    "FieldValue",
+    "LinkEntry",
+    "LocationEntry",
+    "MergeSummary",
+    "PhoneEntry",
+    "ProvenanceEntry",
+    "RawRecord",
+    "SkillEntry",
+    "Source",
+    "SourceProvenance",
+]
