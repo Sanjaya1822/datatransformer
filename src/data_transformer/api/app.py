@@ -237,7 +237,12 @@ async def merge_candidates(
         })
 
     # Execute Pipeline
-    result = runner.run(sources)
+    try:
+        result = runner.run(sources)
+    except Exception as exc:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Pipeline execution error: {str(exc)}")
 
     # ── Persist to Database for Analytics, Review Queue, and Audit ──────────
     db = SessionLocal()
@@ -394,6 +399,9 @@ async def merge_candidates(
 
     except Exception as e:
         db.rollback()
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Database persistence error: {str(e)}")
     finally:
         db.close()
 

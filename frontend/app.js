@@ -340,8 +340,15 @@ async function executePipelineRun() {
     });
 
     if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.detail || 'Pipeline execution failed.');
+      let errDetail = `Status ${res.status}`;
+      try {
+        const errJson = await res.json();
+        errDetail = errJson.detail || JSON.stringify(errJson);
+      } catch (_) {
+        const text = await res.text().catch(() => '');
+        if (text) errDetail = text;
+      }
+      throw new Error(errDetail || 'Pipeline execution failed.');
     }
 
     const data = await res.json();
