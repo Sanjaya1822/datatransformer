@@ -3,7 +3,7 @@
  * Integrates all 12 platform modules with modern reactive rendering.
  */
 
-const API_BASE = window.location.origin.includes(':8000') 
+const API_BASE = (window.location.origin && window.location.origin !== 'null' && !window.location.origin.startsWith('file:'))
   ? window.location.origin 
   : 'http://localhost:8000';
 
