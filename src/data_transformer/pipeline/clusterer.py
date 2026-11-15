@@ -9,7 +9,7 @@ Clustering strategy:
   Auto-merge only at score >= 90.0 (requires hard identifier match)
   Flag for review at score >= 70.0 (soft signals)
 """
-from typing import List, Dict, Any, Set
+from typing import List, Dict, Any, Set, Optional
 from dataclasses import dataclass, field
 import uuid
 

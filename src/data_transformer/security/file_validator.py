@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
-from typing import BinaryIO, List, Tuple
+from typing import BinaryIO, List, Optional, Tuple
 
 ALLOWED_EXTENSIONS = {".pdf", ".docx", ".doc", ".txt", ".csv", ".json"}
 MAX_FILE_SIZE_BYTES = int(os.getenv("MAX_FILE_SIZE_MB", "10")) * 1024 * 1024
